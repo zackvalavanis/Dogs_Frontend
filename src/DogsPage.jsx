@@ -1,6 +1,7 @@
 import { DogsIndex } from "./DogsIndex"
 import { useState, useEffect } from 'react'
 import axios from "axios";
+import { DogsNew } from './DogsNew'
 
 export function DogsPage() {
   const [ dogs, setDogs] = useState([]);
@@ -18,6 +19,7 @@ export function DogsPage() {
   return (
     <main>
       <DogsIndex dogs={dogs}/>
+      <DogsNew />
     </main>
   );
 }

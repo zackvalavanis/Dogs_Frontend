@@ -8,7 +8,7 @@ export function DogsIndex (props) {
            <h2>{dog.name}</h2>
            <p>{dog.age}</p>
            <p>{dog.breed}</p>
-           <img src={dog.image} />
+           <img src={dog.image} className='dog-image'/>
         </div>
       ))}
     </div>
