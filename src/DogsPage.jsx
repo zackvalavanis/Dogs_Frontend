@@ -1,15 +1,20 @@
 import { DogsIndex } from "./DogsIndex"
+import { useState, useEffect } from 'react'
+import axios from "axios";
 
 export function DogsPage() {
-  const dogs = [
-    {
-      id: 1,
-      name: 'Tim',
-      age: 4,
-      breed: 'Beagle',
-      image: 'https://www.bil-jac.com/media/ambgc3os/beagle2-184102750.jpg?anchor=center&mode=crop&width=600&height=400&rnd=132167289621930000&format=webp&quality=80'
-    }
-  ]
+  const [ dogs, setDogs] = useState([]);
+
+  const dogsIndex = () => {
+    console.log('hello');
+    axios.get('http://localhost:3000/dogs.json').then((response) => { 
+      console.log(response.data);
+      setDogs(response.data);
+    });
+  }
+
+  useEffect(dogsIndex, []);
+
   return (
     <main>
       <DogsIndex dogs={dogs}/>
