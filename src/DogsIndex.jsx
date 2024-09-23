@@ -6,7 +6,9 @@ export function DogsIndex (props) {
       {props.dogs.map((dog) => (
         <div key={dog.id} className='dogs'>
            <h2>{dog.name}</h2>
-           
+           <p>{dog.age}</p>
+           <p>{dog.breed}</p>
+           <img src={dog.image} />
         </div>
       ))}
     </div>
