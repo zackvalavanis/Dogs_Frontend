@@ -1,7 +1,17 @@
+import { DogsIndex } from "./DogsIndex"
+
 export function DogsPage() {
+  const dogs = [
+    {
+      id: 1,
+      name: 'tim',
+      age: 4,
+      breed: 'Beagle'
+    }
+  ]
   return (
     <main>
-      <h1>Welcome to React!</h1>
+      <DogsIndex dogs={dogs}/>
     </main>
   );
 }
