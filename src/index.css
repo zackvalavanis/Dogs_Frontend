@@ -1,48 +1,210 @@
-.dog-image {
-  width: 500px;
-  /* Adjust width */
-  height: 500px;
-  /* Adjust height */
-  object-fit: cover;
-  /* Maintains aspect ratio and covers the box */
-}
-
-header {
-  width: 100%;
-  height: 50px;
-  background-color: black;
-  font-style: normal;
-  color: white;
-  text-decoration: none;
-  text-align: center;
-}
-
-/* Reset default margins and padding */
+/* Global Reset for Margins and Padding */
 html,
 body {
   margin: 0;
   padding: 0;
   width: 100%;
+  font-family: 'Arial', sans-serif;
+  /* Set a clean, modern font */
+  background-color: #f5f5f5;
+  /* Light gray background for contrast */
+}
+
+/* Header Styles */
+header {
+  width: 100%;
+  height: 60px;
+  /* Increased height for better spacing */
+  background-color: #343a40;
+  /* Dark gray background */
+  color: white;
+  text-align: center;
+  display: flex;
+  /* Use Flexbox for better alignment */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
 }
 
 header nav a {
   color: white;
   /* Default link color */
   text-decoration: none;
-  margin: 0 10px;
-}
-
-header nav a:visited {
-  color: grey;
-  /* Visited link color */
+  margin: 0 15px;
+  /* Increased spacing */
+  transition: color 0.3s;
+  /* Smooth color transition on hover */
 }
 
 header nav a:hover {
-  color: #bfc2c4;
-  /* Change color on hover (optional) */
+  color: #17a2b8;
+  /* Change color on hover */
 }
 
-header nav a:active {
-  color: black;
-  /* Active link color (when clicked) */
+/* Image Container Styles */
+.image-container {
+  display: flex;
+  justify-content: center;
+  /* Center aligns the images */
+  flex-wrap: wrap;
+  /* Allows items to wrap to the next line */
+  margin: 20px;
+  /* Margin around the image container */
+}
+
+/* Dog Card Styles */
+.dogs {
+  display: flex;
+  flex-direction: column;
+  /* Stacks items vertically */
+  align-items: center;
+  /* Centers items horizontally */
+  margin: 15px;
+  /* Space around each dog card */
+  background-color: white;
+  /* White background for contrast */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Softer shadow for depth */
+  padding: 20px;
+  /* Padding inside the card */
+  transition: transform 0.3s;
+  /* Smooth scale effect on hover */
+}
+
+.dogs:hover {
+  transform: scale(1.05);
+  /* Slightly enlarge the card on hover */
+}
+
+/* Dog Image Styles */
+.dog-image {
+  width: 100%;
+  /* Responsive width */
+  height: auto;
+  /* Maintain aspect ratio */
+  max-width: 400px;
+  /* Maximum width for larger screens */
+  border-radius: 10px;
+  /* Rounded corners */
+}
+
+/* Button Styles */
+.info {
+  display: block;
+  margin: 10px auto;
+  /* Centers the button and adds space around it */
+  padding: 10px 20px;
+  /* Adds padding inside the button */
+  background-color: #007BFF;
+  /* Primary button color */
+  color: white;
+  /* Sets the text color */
+  border: none;
+  /* Removes the default border */
+  border-radius: 5px;
+  /* Rounds the corners */
+  cursor: pointer;
+  /* Changes the cursor to a pointer */
+  text-align: center;
+  transition: background-color 0.3s, transform 0.3s;
+  /* Smooth transitions */
+}
+
+.info:hover {
+  background-color: #0056b3;
+  /* Button color on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
+}
+
+/* Center the new post container */
+#posts-new {
+  display: flex;
+  /* Enables Flexbox */
+  flex-direction: column;
+  /* Stacks children vertically */
+  align-items: center;
+  /* Centers children horizontally */
+  justify-content: flex-start;
+  /* Aligns children to the top */
+  padding: 40px 20px;
+  /* Adds padding around the container */
+  margin: 20px auto;
+  /* Centers the container and adds space */
+  background-color: white;
+  /* White background for the form */
+  border-radius: 10px;
+  /* Rounded corners */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for depth */
+}
+
+/* Form Styles */
+form {
+  display: flex;
+  /* Enables Flexbox for the form */
+  flex-direction: column;
+  /* Stacks the form elements vertically */
+  width: 300px;
+  /* Wider form for better usability */
+  margin: 0 auto;
+  /* Centers the form horizontally */
+}
+
+/* Input and button styling */
+input {
+  margin-bottom: 15px;
+  /* Space between form elements */
+  padding: 10px;
+  /* Adds padding inside the input fields */
+  border: 1px solid #ccc;
+  /* Border color */
+  border-radius: 5px;
+  /* Rounds the corners */
+  transition: border-color 0.3s;
+  /* Smooth transition */
+}
+
+input:focus {
+  border-color: #007BFF;
+  /* Highlight border color on focus */
+  outline: none;
+  /* Remove default outline */
+}
+
+button {
+  background-color: #007BFF;
+  /* Button background color */
+  color: white;
+  /* Button text color */
+  padding: 10px;
+  /* Button padding */
+  border: none;
+  /* Removes border */
+  border-radius: 5px;
+  /* Rounds corners */
+  cursor: pointer;
+  /* Changes cursor to pointer on hover */
+  transition: background-color 0.3s, transform 0.3s;
+  /* Smooth transitions */
+}
+
+button:hover {
+  background-color: #0056b3;
+  /* Button color on hover */
+  transform: translateY(-2px);
+  /* Slight lift effect on hover */
+}
+
+/* Footer Styles */
+footer {
+  margin: 20px auto;
+  /* Centers footer with margin */
+  text-align: center;
+  /* Centers text */
+  color: #777;
+  /* Slightly muted color for text */
 }
