@@ -9,8 +9,9 @@ export function DogsIndex (props) {
            <p>{dog.age}</p>
            <p>{dog.breed}</p>
            <img src={dog.image} className='dog-image'/>
+           <button onClick={() => props.onShow(dog)}>More Info</button>
         </div>
       ))}
     </div>
   )
-}
+} 

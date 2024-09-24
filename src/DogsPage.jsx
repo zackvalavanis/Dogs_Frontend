@@ -2,9 +2,12 @@ import { DogsIndex } from "./DogsIndex"
 import { useState, useEffect } from 'react'
 import axios from "axios";
 import { DogsNew } from './DogsNew'
+import { Modal } from './Modal'
 
 export function DogsPage() {
-  const [ dogs, setDogs] = useState([]);
+  const [ dogs, setDogs ] = useState([]);
+  const [ isDogsShowVisible, setIsDogsShowVisible ] = useState(false);
+  const [ currentDog, setCurrentDog ] = useState({});
 
   const dogsIndex = () => {
     console.log('hello');
@@ -22,13 +25,28 @@ export function DogsPage() {
     });
   }
 
+  const dogsShow = (dogs) => { 
+    console.log("dogsShow", dogs);
+    setIsDogsShowVisible(true);
+    setCurrentDog(dogs);
+  }
+
+  const dogsClose = () => { 
+    console.log("dogsClose");
+    setIsDogsShowVisible(false);
+
+  }
+
 
   useEffect(dogsIndex, []);
 
   return (
     <main>
-      <DogsIndex dogs={dogs}/>
+      <DogsIndex dogs={dogs} onShow={dogsShow}/>
       <DogsNew onCreatePost={dogsSubmit}/>
+      <Modal show={isDogsShowVisible} onClose={dogsClose}>
+        <h1>Hello</h1>
+      </Modal>
     </main>
   );
 }
