@@ -1,5 +1,4 @@
 export function DogsIndex (props) { 
-  console.log('hello')
   return ( 
     <div id='dogs-index'>
       <h1>All Dogs</h1>

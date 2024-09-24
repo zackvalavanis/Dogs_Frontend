@@ -12,7 +12,6 @@ export function DogsPage() {
   const [ currentDog, setCurrentDog ] = useState({});
 
   const dogsIndex = () => {
-    console.log('hello');
     axios.get('http://localhost:3000/dogs.json').then((response) => { 
       console.log(response.data);
       setDogs(response.data);
